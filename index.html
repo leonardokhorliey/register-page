@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: rgb(254,121,120);
+            height: 100vh;
+        }
+
+        main {
+            background: url(./images/bg-intro-desktop.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+        }
+
+        .main-area {
+            display: flex;
+            align-items: center;
+            width: 62.5rem;
+            height: 90%;
+            margin: auto;
+            justify-content: space-between;
+        }
+
+        .text-intro {
+            color: white;
+            text-align: left;
+            width: 450px;
+        }
+
+        .text-intro h1 {
+            font-size: 3rem;
+            margin: 0 0 30px 0;
+        }
+
+        .form-area {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            gap: 20px;
+        }
+
+        #trial-card {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            background-color: rgb(94,84,164);
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-size: 0.75rem;
+            box-shadow: 0 8px 2px -2px rgba(128, 128, 128, 0.438);
+        }
+
+        #trial-card span {
+            font-weight: bolder;
+        }
+
+        .reg-form {
+            padding: 40px;
+            box-sizing: border-box;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 2px -2px rgba(128, 128, 128, 0.438);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        
+
+        .reg-form input {
+            padding: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+            border: 1px solid rgb(163, 162, 162);
+            border-radius: 5px;;
+        }
+
+        form:active input:focus:invalid {
+            border: 1px solid red;
+            background: url("./images/icon-error.svg");
+            background-repeat: no-repeat;
+            background-position: 95%;
+        }
+
+        .reg-form input:active {
+            border: 1px solid gray !important;
+        }
+
+        #register {
+            background: rgb(51,207,139);
+            color: white;
+            border: 0px;
+            cursor: pointer;
+        }
+
+        #t-and-c {
+            font-size: 0.5rem;
+            color: rgb(175, 173, 173);
+        }
+
+        #t-and-c a {
+            color: rgb(254,121,120);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 1000px) {
+            main {
+                background: url(./images/bg-intro-mobile.png);
+            }
+
+            .main-area {
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 500px;
+                min-height: 500px;
+                margin: 50px auto;
+                justify-content: space-between;
+            }
+
+            .text-intro {
+                text-align: center;
+                width: 100%;
+            }
+
+            .form-area {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            main {
+                background: url(./images/bg-intro-mobile.png);
+            }
+
+            .main-area {
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                width: 90%;
+                min-height: 500px;
+                margin: 50px auto;
+                justify-content: space-around;
+            }
+
+            .text-intro {
+                text-align: center;
+                width: 100%;
+            }
+
+            .form-area {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class= "main-area">
+            <div class= "text-intro">
+                <h1>Learn to code by watching others</h1>
+                <p>See how experienced developers solve problems in real-time.<br/>
+                Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+            </div>
+            <div class= "form-area">
+                <div id= "trial-card">
+                    <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+                </div>
+                <div class= "reg-form">
+                    <form action="">
+                        <input type="text" placeholder="First Name" value="Jonathan " required minlength="3" maxlength="25"/>
+                        <input type="text" placeholder="Last Name" value="" required minlength="3" maxlength="25"/>
+                        <input type="email" placeholder="Email Address" value="" required/>
+                        <input type="password" placeholder="Password" value="" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+                        <input id= "register" type="submit" value="CLAIM YOUR FREE TRIAL"/>
+                    </form>
+                    <p id= "t-and-c">By clicking this button, you are agreeing to our <a href="/">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
